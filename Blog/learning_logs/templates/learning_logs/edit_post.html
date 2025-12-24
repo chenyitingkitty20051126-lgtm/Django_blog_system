@@ -1,0 +1,34 @@
+{% extends "learning_logs/base.html" %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <div class="card shadow-sm border-0">
+        <div class="card-header bg-primary text-white py-3">
+          <h4 class="mb-0">Edit Post: {{ post.title }}</h4>
+        </div>
+        
+        <div class="card-body p-4">
+          <form action="{% url 'learning_logs:edit_post' post.id %}" method="post" enctype="multipart/form-data" class="form">
+            {% csrf_token %}
+            
+            {# 使用 bootstrap_form 自动美化所有字段（包括附件上传） #}
+            {% bootstrap_form form %}
+
+            {% if post.attachment %}
+              <div class="alert alert-info mt-2">
+                <small>当前附件: <a href="{{ post.attachment.url }}" target="_blank">{{ post.attachment.name }}</a></small>
+              </div>
+            {% endif %}
+
+            <div class="mt-4">
+              <button name="submit" class="btn btn-primary px-5">Save changes</button>
+              <a href="{% url 'learning_logs:blogs' %}" class="btn btn-outline-secondary ms-2">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

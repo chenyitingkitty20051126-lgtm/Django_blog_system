@@ -1,0 +1,27 @@
+{% extends "learning_logs/base.html" %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <div class="card shadow-sm border-0">
+        <div class="card-header bg-dark text-white py-3">
+          <h4 class="mb-0">Add a New Post</h4>
+        </div>
+        <div class="card-body p-4">
+          <form action="{% url 'learning_logs:new_post' %}" method="post" enctype="multipart/form-data" class="form">
+            {% csrf_token %}
+            
+            {# 自动渲染包含附件上传框的表单 #}
+            {% bootstrap_form form %}
+
+            <div class="mt-4">
+              <button name="submit" class="btn btn-primary px-5">Add post</button>
+              <a href="{% url 'learning_logs:blogs' %}" class="btn btn-outline-secondary ms-2">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

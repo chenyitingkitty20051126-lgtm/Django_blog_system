@@ -1,0 +1,36 @@
+{% extends "learning_logs/base.html" %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+      <div class="card shadow-sm border-0 mt-5">
+        <div class="card-header bg-dark text-white text-center py-3">
+          <h4 class="mb-0">用户登录</h4>
+        </div>
+        <div class="card-body p-4">
+          <p class="text-muted text-center mb-4">请输入您的账号和密码</p>
+          
+          <form method="post" action="{% url 'accounts:login' %}" class="form">
+            {% csrf_token %}
+            
+            {# 利用插件自动将原始表单 转换为 Bootstrap 风格 #}
+            {% bootstrap_form form %}
+
+            <div class="d-grid gap-2 mt-4">
+              <button name="submit" class="btn btn-primary btn-lg">立即登录</button>
+            </div>
+            
+            {# 隐藏字段：登录后自动重定向回之前的页面 #}
+            <input type="hidden" name="next" value="{% url 'learning_logs:index' %}" />
+          </form>
+
+          <div class="text-center mt-3">
+            <span class="text-muted">还没有账户？</span>
+            <a href="{% url 'accounts:register' %}" class="text-decoration-none">立即注册</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

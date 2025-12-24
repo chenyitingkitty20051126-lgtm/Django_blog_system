@@ -1,0 +1,17 @@
+{% extends "learning_logs/base.html" %}
+
+{% block content %}
+  <div class="py-5 text-center">
+    <h1 class="display-4 fw-bold">Track your learning.</h1>
+    <p class="lead">Learning Log helps you keep track of your learning, for any topic you're interested in.</p>
+    <hr class="my-4">
+    <p class="text-muted">记录你的学习历程，随时回顾你的进步。</p>
+    
+    {% if not user.is_authenticated %}
+      <div class="mt-4">
+        <a class="btn btn-primary btn-lg px-4 me-md-2" href="{% url 'accounts:register' %}">立即注册</a>
+        <a class="btn btn-outline-secondary btn-sm px-4" href="{% url 'accounts:login' %}">登录</a>
+      </div>
+    {% endif %}
+  </div>
+{% endblock content %}

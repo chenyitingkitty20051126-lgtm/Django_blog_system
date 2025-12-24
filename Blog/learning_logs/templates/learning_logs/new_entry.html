@@ -1,0 +1,27 @@
+{% extends "learning_logs/base.html" %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-10 col-lg-8">
+      <div class="card shadow border-0">
+        <div class="card-header bg-success text-white py-3">
+          <h4 class="mb-0">Add a new entry for: <span class="fw-light">{{ topic.text }}</span></h4>
+        </div>
+        <div class="card-body p-4">
+          <form action="{% url 'learning_logs:new_entry' topic.id %}" method="post" class="form">
+            {% csrf_token %}
+            
+            {# 自动渲染 Bootstrap 样式的文本域 #}
+            {% bootstrap_form form %}
+
+            <div class="mt-4 d-flex">
+              <button name="submit" class="btn btn-success px-5">Save Entry</button>
+              <a href="{% url 'learning_logs:topic' topic.id %}" class="btn btn-outline-secondary ms-3">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

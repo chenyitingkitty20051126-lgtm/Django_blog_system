@@ -1,0 +1,24 @@
+{% extends "learning_logs/base.html" %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+      <div class="card border-danger shadow">
+        <div class="card-header bg-danger text-white">
+          <h5 class="mb-0">Confirm Delete</h5>
+        </div>
+        <div class="card-body text-center p-4">
+          <p class="lead">Are you sure you want to delete the topic: <strong>"{{ topic.text }}"</strong>?</p>
+          <p class="text-muted small">This will also delete all entries associated with this topic. This action cannot be undone.</p>
+          
+          <form action="{% url 'learning_logs:delete_topic' topic.id %}" method="post" class="mt-4">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger px-4">Yes, Delete Everything</button>
+            <a href="{% url 'learning_logs:topics' %}" class="btn btn-outline-secondary ms-2 px-4">Cancel</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

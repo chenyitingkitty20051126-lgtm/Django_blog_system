@@ -1,0 +1,33 @@
+{% extends "learning_logs/base.html" %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card shadow-sm border-0 mt-4">
+        <div class="card-header bg-dark text-white text-center py-3">
+          <h4 class="mb-0">创建新账户</h4>
+        </div>
+        <div class="card-body p-4">
+          <p class="text-muted text-center mb-4">加入 Learning Log，开始记录您的学习历程</p>
+          
+          <form method="post" action="{% url 'accounts:register' %}" class="form">
+            {% csrf_token %}
+            
+            {# 使用 bootstrap5 标签自动美化 Django 表单字段 #}
+            {% bootstrap_form form %}
+
+            <div class="d-grid gap-2 mt-4">
+              <button name="submit" class="btn btn-primary btn-lg">立即注册</button>
+            </div>
+            
+            <div class="text-center mt-3">
+              <span class="text-muted">已经有账户了？</span>
+              <a href="{% url 'accounts:login' %}" class="text-decoration-none">点此登录</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

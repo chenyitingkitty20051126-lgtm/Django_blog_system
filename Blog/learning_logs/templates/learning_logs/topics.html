@@ -1,0 +1,29 @@
+{% extends "learning_logs/base.html" %}
+
+{% block content %}
+  <h3 class="mb-4">Topics</h3>
+
+  <div class="list-group mb-4 shadow-sm">
+    {% for topic in topics %}
+      <div class="list-group-item d-flex justify-content-between align-items-center p-3">
+        <div>
+          <a href="{% url 'learning_logs:topic' topic.id %}" class="text-decoration-none fw-bold fs-5">
+            {{ topic.text }}
+          </a>
+          
+          {% if user.is_superuser %}
+            <span class="badge bg-info text-dark ms-2">Owner: {{ topic.owner }}</span>
+          {% endif %}
+        </div>
+
+        <a href="{% url 'learning_logs:delete_topic' topic.id %}" class="btn btn-outline-danger btn-sm">
+          Delete
+        </a>
+      </div>
+    {% empty %}
+      <div class="list-group-item text-muted">No topics have been added yet.</div>
+    {% endfor %}
+  </div>
+
+  <a href="{% url 'learning_logs:new_topic' %}" class="btn btn-primary px-4">Add a new topic</a>
+{% endblock content %}
