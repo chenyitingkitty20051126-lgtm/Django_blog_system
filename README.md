@@ -52,7 +52,7 @@
 
 1. **克隆项目**
 ```bash
-git clone https://github.com/你的用户名/项目名.git
+git clone https://github.com/chenyitingkitty20051126-lgtm/Django_blog_system.git
 cd 项目名
 
 ```
@@ -102,8 +102,3 @@ python manage.py runserver
 ## 📄 开源协议 (License)
 
 本项目遵循 [MIT License](https://www.google.com/search?q=LICENSE)。
-
----
-
-**✍️ 提示：** 1. 记得把 `https://github.com/你的用户名/项目名.git` 替换为你真实的仓库地址。
-2. 截图部分建议上传你实验报告里的真实图片到仓库的 `screenshots/` 文件夹下，然后修改链接。
