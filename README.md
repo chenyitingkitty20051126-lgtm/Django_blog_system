@@ -98,7 +98,7 @@ python manage.py runserver
 博客列表 (Blog)
 <img width="1112" height="802" alt="blog界面" src="https://github.com/user-attachments/assets/27b6fdc1-cdb0-4723-a049-b71bf8c4b1a4" />
 笔记详情 (Note)
-<img width="1919" height="1001" alt="topics界面" src="https://github.com/user-attachments/assets/ebccf10c-8b79-4050-a2e5-8987a4304343" /> |
+<img width="1919" height="1001" alt="topics界面" src="https://github.com/user-attachments/assets/ebccf10c-8b79-4050-a2e5-8987a4304343" />
 
 ---
 
