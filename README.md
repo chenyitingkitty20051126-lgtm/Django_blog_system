@@ -1,9 +1,4 @@
 # Django_blog_system
-这份 GitHub `README.md` 是根据你的项目核心（Django, Blog, Learning Log, 附件上传, 多级权限, Bootstrap 5）精心编写的。它不仅能展示你的代码功底，还能体现项目的工程完备性。
-
-你可以直接将以下内容复制到你项目根目录的 `README.md` 文件中：
-
----
 
 # Django Multi-Functional Web Platform (Blog & Learning Log)
 
