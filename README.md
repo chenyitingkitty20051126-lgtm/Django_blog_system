@@ -1,7 +1,5 @@
 # Django_blog_system
 
-# Django Multi-Functional Web Platform (Blog & Learning Log)
-
 ## 🚀 项目概览 (Overview)
 
 这是一个基于 Django 开发的综合性 Web 平台，集成了**公开博客 (Blog)** 与 **私人笔记 (Learning Log)** 两大核心业务。项目不仅实现了基础的 CRUD（增删改查）功能，还深度集成了用户认证系统、多级权限校验机制以及响应式 UI 交互。
