@@ -93,8 +93,12 @@ python manage.py runserver
 
 ## 📸 运行截图 (Screenshots)
 
-| 登录界面 (Auth) | 博客列表 (Blog) | 笔记详情 (Note) |
-| <img width="1654" height="785" alt="登陆界面" src="https://github.com/user-attachments/assets/a24bb475-04c8-47b3-93b4-16f8120dd3a1" /> | <img width="1112" height="802" alt="blog界面" src="https://github.com/user-attachments/assets/27b6fdc1-cdb0-4723-a049-b71bf8c4b1a4" /> | <img width="1919" height="1001" alt="topics界面" src="https://github.com/user-attachments/assets/ebccf10c-8b79-4050-a2e5-8987a4304343" /> |
+ 登录界面 (Auth) 
+<img width="1654" height="785" alt="登陆界面" src="https://github.com/user-attachments/assets/a24bb475-04c8-47b3-93b4-16f8120dd3a1" />
+博客列表 (Blog)
+<img width="1112" height="802" alt="blog界面" src="https://github.com/user-attachments/assets/27b6fdc1-cdb0-4723-a049-b71bf8c4b1a4" />
+笔记详情 (Note)
+<img width="1919" height="1001" alt="topics界面" src="https://github.com/user-attachments/assets/ebccf10c-8b79-4050-a2e5-8987a4304343" /> |
 
 ---
 
